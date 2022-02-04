@@ -54,8 +54,13 @@ const accordion_title = document.querySelectorAll('.accourdion-title')
  
 accordion_title.forEach(item => {
     item.addEventListener('click',function(){
+ 
+        accordion_title.forEach(items => {
+            items.classList.remove('active');
+            items.nextElementSibling.style.height = "0px";
+        })
+
         item.classList.toggle('active')
-        
         if(item.classList.contains("active")){
             item.nextElementSibling.style.height = item.nextElementSibling.scrollHeight + "px"
         }else{
