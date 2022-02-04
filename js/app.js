@@ -56,8 +56,11 @@ accordion_title.forEach(item => {
     item.addEventListener('click',function(){
  
         accordion_title.forEach(items => {
-            items.classList.remove('active');
-            items.nextElementSibling.style.height = "0px";
+            
+            if(items !== this){
+                items.classList.remove('active');
+                items.nextElementSibling.style.height = "0px";
+            }
         })
 
         item.classList.toggle('active')
